@@ -7,18 +7,23 @@
     <script src="https://cdn.tailwindcss.com"></script>
     
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
         
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        
+        h1, h2, h3, h4, h5, h6, .nav-brand, .font-display {
+            font-family: 'Space Grotesk', sans-serif;
+            letter-spacing: -0.02em;
         }
         
         body {
-            background: #0a0a0a;
+            background: #030303;
+            color: #f3f4f6;
             overflow-x: hidden;
         }
         
@@ -29,21 +34,21 @@
         
         /* Custom Scrollbar */
         ::-webkit-scrollbar {
-            width: 10px;
+            width: 6px;
         }
         
         ::-webkit-scrollbar-track {
-            background: #0a0a0a;
+            background: #030303;
         }
         
         ::-webkit-scrollbar-thumb {
-            background: linear-gradient(180deg, #00d4ff, #0099ff);
+            background: linear-gradient(180deg, #06b6d4, #3b82f6);
             border-radius: 10px;
         }
         
         /* Animated Background */
         .animated-bg {
-            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0f1419 100%);
+            background: radial-gradient(circle at top, #0f172a 0%, #030303 70%);
             position: relative;
             overflow: hidden;
         }
@@ -53,60 +58,60 @@
             position: absolute;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle at 20% 50%, rgba(0, 212, 255, 0.15) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 80%, rgba(0, 153, 255, 0.15) 0%, transparent 50%);
-            animation: pulse-bg 8s ease-in-out infinite;
+            background: radial-gradient(circle at 15% 30%, rgba(6, 182, 212, 0.08) 0%, transparent 60%),
+                        radial-gradient(circle at 85% 70%, rgba(59, 130, 246, 0.08) 0%, transparent 60%);
+            animation: pulse-bg 12s ease-in-out infinite;
         }
         
         @keyframes pulse-bg {
-            0%, 100% { opacity: 0.5; }
+            0%, 100% { opacity: 0.6; }
             50% { opacity: 1; }
         }
         
         /* Grid Background */
         .grid-bg {
             background-image: 
-                linear-gradient(rgba(0, 212, 255, 0.05) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 212, 255, 0.05) 1px, transparent 1px);
-            background-size: 50px 50px;
+                linear-gradient(rgba(6, 182, 212, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(6, 182, 212, 0.02) 1px, transparent 1px);
+            background-size: 60px 60px;
         }
         
         /* Glassmorphism Dark */
         .glass-dark {
-            background: rgba(20, 20, 30, 0.7);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(0, 212, 255, 0.2);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5),
-                        0 0 20px rgba(0, 212, 255, 0.1);
+            background: rgba(10, 10, 12, 0.75);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
         }
         
         .glass-card {
-            background: rgba(26, 26, 46, 0.6);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border: 1px solid rgba(0, 212, 255, 0.3);
-            transition: all 0.4s ease;
+            background: rgba(15, 15, 20, 0.5);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
         
         .glass-card:hover {
-            background: rgba(26, 26, 46, 0.8);
-            border-color: rgba(0, 212, 255, 0.6);
-            box-shadow: 0 0 40px rgba(0, 212, 255, 0.3);
-            transform: translateY(-10px);
+            background: rgba(20, 20, 28, 0.65);
+            border-color: rgba(6, 182, 212, 0.25);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.8),
+                        0 0 30px rgba(6, 182, 212, 0.08);
+            transform: translateY(-6px);
         }
         
         /* Neon Text */
         .neon-text {
-            color: #00d4ff;
-            text-shadow: 0 0 10px rgba(0, 212, 255, 0.8),
-                         0 0 20px rgba(0, 212, 255, 0.6),
-                         0 0 30px rgba(0, 212, 255, 0.4);
+            background: linear-gradient(to right, #22d3ee, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         
         /* Gradient Text */
         .gradient-text {
-            background: linear-gradient(135deg, #00d4ff 0%, #0099ff 50%, #0066ff 100%);
+            background: linear-gradient(135deg, #22d3ee 0%, #3b82f6 50%, #4f46e5 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -114,41 +119,26 @@
         
         /* Profile Image Glow */
         .profile-glow {
-            border: 4px solid #00d4ff;
-            box-shadow: 0 0 60px rgba(0, 212, 255, 0.6),
-                        0 0 120px rgba(0, 153, 255, 0.4),
-                        inset 0 0 20px rgba(0, 212, 255, 0.2);
-            animation: glow-pulse 3s ease-in-out infinite;
-        }
-        
-        @keyframes glow-pulse {
-            0%, 100% { 
-                box-shadow: 0 0 60px rgba(0, 212, 255, 0.6),
-                            0 0 120px rgba(0, 153, 255, 0.4),
-                            inset 0 0 20px rgba(0, 212, 255, 0.2);
-            }
-            50% { 
-                box-shadow: 0 0 80px rgba(0, 212, 255, 0.8),
-                            0 0 160px rgba(0, 153, 255, 0.6),
-                            inset 0 0 30px rgba(0, 212, 255, 0.3);
-            }
+            border: 1px solid rgba(6, 182, 212, 0.3);
+            box-shadow: 0 0 40px rgba(6, 182, 212, 0.15),
+                        0 0 80px rgba(59, 130, 246, 0.1);
         }
         
         /* Floating Animation */
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
+            50% { transform: translateY(-12px); }
         }
         
         .floating {
-            animation: float 6s ease-in-out infinite;
+            animation: float 8s ease-in-out infinite;
         }
         
         /* Fade In Up */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(20px);
             }
             to {
                 opacity: 1;
@@ -157,18 +147,18 @@
         }
         
         .fade-in {
-            animation: fadeInUp 0.8s ease-out forwards;
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
         
-        .delay-1 { animation-delay: 0.2s; opacity: 0; }
-        .delay-2 { animation-delay: 0.4s; opacity: 0; }
-        .delay-3 { animation-delay: 0.6s; opacity: 0; }
-        .delay-4 { animation-delay: 0.8s; opacity: 0; }
+        .delay-1 { animation-delay: 0.1s; opacity: 0; }
+        .delay-2 { animation-delay: 0.2s; opacity: 0; }
+        .delay-3 { animation-delay: 0.3s; opacity: 0; }
+        .delay-4 { animation-delay: 0.4s; opacity: 0; }
         
         /* Skill Progress */
         .skill-progress {
             transform-origin: left;
-            animation: progress-expand 2s ease-out forwards;
+            animation: progress-expand 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
         
         @keyframes progress-expand {
@@ -178,22 +168,22 @@
         
         /* Hover Lift */
         .hover-lift {
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
         
         .hover-lift:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 60px rgba(0, 212, 255, 0.3);
+            transform: translateY(-6px);
+            box-shadow: 0 15px 30px -10px rgba(6, 182, 212, 0.15);
         }
         
         /* Button Pulse */
         @keyframes pulse-button {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(0, 212, 255, 0.7); }
-            50% { box-shadow: 0 0 0 20px rgba(0, 212, 255, 0); }
+            0%, 100% { box-shadow: 0 0 0 0 rgba(6, 182, 212, 0.4); }
+            50% { box-shadow: 0 0 0 15px rgba(6, 182, 212, 0); }
         }
         
         .pulse-animation {
-            animation: pulse-button 2s infinite;
+            animation: pulse-button 3s infinite;
         }
         
         /* Particle Animation */
@@ -291,6 +281,24 @@
         .nav-link:hover::after {
             width: 100%;
         }
+        
+        /* Custom Spotlight */
+        .spotlight {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 9999;
+            background: radial-gradient(circle 300px at var(--x, 0px) var(--y, 0px), rgba(0, 212, 255, 0.04), transparent 80%);
+            mix-blend-mode: screen;
+        }
+        
+        /* Project card filtering transitions */
+        .project-card {
+            transition: opacity 0.3s ease, transform 0.3s ease, display 0.3s ease;
+        }
     </style>
 </head>
 <body class="bg-black text-white">
@@ -308,6 +316,7 @@
                     <a href="#about" class="nav-link text-gray-300 hover:text-cyan-400 transition font-medium">About</a>
                     <a href="#skills" class="nav-link text-gray-300 hover:text-cyan-400 transition font-medium">Skills</a>
                     <a href="#projects" class="nav-link text-gray-300 hover:text-cyan-400 transition font-medium">Projects</a>
+                    <a href="#achievements" class="nav-link text-gray-300 hover:text-cyan-400 transition font-medium">Achievements</a>
                     <a href="#contact" class="px-6 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full text-white font-medium hover:shadow-lg hover:shadow-cyan-500/50 transition transform hover:scale-105">
                         Contact
                     </a>
@@ -327,6 +336,7 @@
                 <a href="#about" class="block text-gray-300 hover:text-cyan-400 transition">About</a>
                 <a href="#skills" class="block text-gray-300 hover:text-cyan-400 transition">Skills</a>
                 <a href="#projects" class="block text-gray-300 hover:text-cyan-400 transition">Projects</a>
+                <a href="#achievements" class="block text-gray-300 hover:text-cyan-400 transition">Achievements</a>
                 <a href="#contact" class="block text-gray-300 hover:text-cyan-400 transition">Contact</a>
             </div>
         </div>
@@ -409,7 +419,7 @@
                     <div class="relative floating">
                         <!-- Glass Frame with Photo -->
                         <div class="glass-dark p-4 rounded-3xl">
-                            <img src="https://codewords-uploads.s3.amazonaws.com/runtime_v2/979c3490502041cda14b1efd510be86a195d39fac88c437e855a7aff42fb2620/WhatsApp_Image_2025-11-24_at_11.03.57.jpeg" 
+                            <img src="profile.jpg" 
                                  alt="Aman Sharma" 
                                  class="w-80 h-80 lg:w-96 lg:h-96 object-cover rounded-2xl profile-glow">
                         </div>
@@ -619,11 +629,96 @@
                 </h2>
                 <p class="text-center text-gray-400 text-lg mb-16">Showcasing my best work</p>
                 
-                <div class="grid lg:grid-cols-2 gap-8">
-                    <!-- Project 1: AI Blog Generator -->
-                    <div class="glass-card rounded-3xl overflow-hidden hover-lift project-card relative">
+                <!-- Project Filter Buttons -->
+                <div class="flex flex-wrap justify-center gap-4 mb-12">
+                    <button class="filter-btn active px-6 py-2 rounded-full border border-cyan-500/30 text-gray-300 hover:text-white transition duration-300 bg-cyan-500/20 text-cyan-400 font-semibold" data-filter="all">All Projects</button>
+                    <button class="filter-btn px-6 py-2 rounded-full border border-gray-800 text-gray-400 hover:border-cyan-500/30 hover:text-white transition duration-300" data-filter="ai">AI / ML</button>
+                    <button class="filter-btn px-6 py-2 rounded-full border border-gray-800 text-gray-400 hover:border-cyan-500/30 hover:text-white transition duration-300" data-filter="web3">Web3 & Blockchain</button>
+                    <button class="filter-btn px-6 py-2 rounded-full border border-gray-800 text-gray-400 hover:border-cyan-500/30 hover:text-white transition duration-300" data-filter="utility">Utilities</button>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project 1: Privacy Sentinel -->
+                    <div class="glass-card rounded-3xl overflow-hidden hover-lift project-card relative" data-category="ai web3">
                         <!-- Project Image/Icon Area -->
-                        <div class="h-64 bg-gradient-to-br from-cyan-600 to-blue-600 flex items-center justify-center relative overflow-hidden">
+                        <div class="h-64 bg-gradient-to-br from-emerald-600 to-teal-800 flex items-center justify-center relative overflow-hidden">
+                            <div class="absolute inset-0 bg-black/30"></div>
+                            <div class="text-9xl relative z-10 transform group-hover:scale-110 transition-transform">🛡️</div>
+                            
+                            <!-- Hover Overlay -->
+                            <div class="project-overlay">
+                                <h4 class="text-2xl font-bold mb-6">View Project</h4>
+                                <div class="flex gap-4">
+                                    <a href="https://github.com/aman24-cpu/privacy-sentinel" target="_blank" class="px-6 py-3 bg-white text-black rounded-lg font-semibold hover:bg-gray-100 transition">
+                                        GitHub
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="p-8">
+                            <div class="flex items-start justify-between mb-4 gap-2">
+                                <h3 class="text-2xl font-bold text-white leading-tight">Privacy Sentinel</h3>
+                                <span class="px-3 py-1 bg-gradient-to-r from-emerald-500 to-teal-600 text-white rounded-full text-xs font-semibold whitespace-nowrap">
+                                    AI SECURITY
+                                </span>
+                            </div>
+                            
+                            <p class="text-gray-400 mb-6 leading-relaxed text-sm">
+                                Autonomous personal neural protection agent that negotiates user data access via ZK-Proofs. Intercepts WalletConnect requests with an ElizaOS agent brain. Built for Global Hackathon 2026.
+                            </p>
+                            
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2.5 py-1 bg-emerald-500/20 text-emerald-400 rounded-lg text-xs border border-emerald-500/30">ElizaOS</span>
+                                <span class="px-2.5 py-1 bg-blue-500/20 text-blue-400 rounded-lg text-xs border border-blue-500/30">TypeScript</span>
+                                <span class="px-2.5 py-1 bg-cyan-500/20 text-cyan-400 rounded-lg text-xs border border-cyan-500/30">Next.js</span>
+                                <span class="px-2.5 py-1 bg-purple-500/20 text-purple-400 rounded-lg text-xs border border-purple-500/30">ZK-Proofs</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 2: Algorand Smart Contract -->
+                    <div class="glass-card rounded-3xl overflow-hidden hover-lift project-card relative" data-category="web3">
+                        <!-- Project Image/Icon Area -->
+                        <div class="h-64 bg-gradient-to-br from-purple-600 to-indigo-800 flex items-center justify-center relative overflow-hidden">
+                            <div class="absolute inset-0 bg-black/30"></div>
+                            <div class="text-9xl relative z-10 transform group-hover:scale-110 transition-transform">⛓️</div>
+                            
+                            <!-- Hover Overlay -->
+                            <div class="project-overlay">
+                                <h4 class="text-2xl font-bold mb-6">View Project</h4>
+                                <div class="flex gap-4">
+                                    <a href="https://github.com/aman24-cpu/ace-hack-algo" target="_blank" class="px-6 py-3 bg-white text-black rounded-lg font-semibold hover:bg-gray-100 transition">
+                                        GitHub
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="p-8">
+                            <div class="flex items-start justify-between mb-4 gap-2">
+                                <h3 class="text-2xl font-bold text-white leading-tight">Algo Smart Contract</h3>
+                                <span class="px-3 py-1 bg-gradient-to-r from-purple-500 to-indigo-600 text-white rounded-full text-xs font-semibold whitespace-nowrap">
+                                    🏆 3rd PLACE
+                                </span>
+                            </div>
+                            
+                            <p class="text-gray-400 mb-6 leading-relaxed text-sm">
+                                Secure Algorand blockchain algorithm and smart contract solution. Deployed and verified during the AceHack hackathon, earning the 3rd Place overall award.
+                            </p>
+                            
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2.5 py-1 bg-purple-500/20 text-purple-400 rounded-lg text-xs border border-purple-500/30">Algorand</span>
+                                <span class="px-2.5 py-1 bg-blue-500/20 text-blue-400 rounded-lg text-xs border border-blue-500/30">TypeScript</span>
+                                <span class="px-2.5 py-1 bg-green-500/20 text-green-400 rounded-lg text-xs border border-green-500/30">Blockchain</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 3: Binance Futures Bot -->
+                    <div class="glass-card rounded-3xl overflow-hidden hover-lift project-card relative" data-category="ai utility">
+                        <!-- Project Image/Icon Area -->
+                        <div class="h-64 bg-gradient-to-br from-yellow-500 to-amber-700 flex items-center justify-center relative overflow-hidden">
                             <div class="absolute inset-0 bg-black/30"></div>
                             <div class="text-9xl relative z-10 transform group-hover:scale-110 transition-transform">🤖</div>
                             
@@ -631,41 +726,76 @@
                             <div class="project-overlay">
                                 <h4 class="text-2xl font-bold mb-6">View Project</h4>
                                 <div class="flex gap-4">
-                                    <a href="https://github.com/aman24-cpu" target="_blank" class="px-6 py-3 bg-white text-black rounded-lg font-semibold hover:bg-gray-100 transition">
+                                    <a href="https://github.com/aman24-cpu/binance-testnet-bot" target="_blank" class="px-6 py-3 bg-white text-black rounded-lg font-semibold hover:bg-gray-100 transition">
                                         GitHub
-                                    </a>
-                                    <a href="#" class="px-6 py-3 bg-black/50 border-2 border-white rounded-lg font-semibold hover:bg-white hover:text-black transition">
-                                        Live Demo
                                     </a>
                                 </div>
                             </div>
                         </div>
                         
                         <div class="p-8">
-                            <div class="flex items-start justify-between mb-4">
-                                <h3 class="text-2xl font-bold text-white">AI Blog Generator</h3>
-                                <span class="px-3 py-1 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-full text-xs font-semibold">
-                                    AI POWERED
+                            <div class="flex items-start justify-between mb-4 gap-2">
+                                <h3 class="text-2xl font-bold text-white leading-tight">Binance Futures Bot</h3>
+                                <span class="px-3 py-1 bg-gradient-to-r from-yellow-500 to-amber-600 text-black rounded-full text-xs font-semibold whitespace-nowrap">
+                                    FINTECH
                                 </span>
                             </div>
                             
-                            <p class="text-gray-400 mb-6 leading-relaxed">
-                                Transform YouTube videos into professional blog articles using Gemini AI. 
-                                Features include user authentication, multi-language support, and a beautiful modern UI.
+                            <p class="text-gray-400 mb-6 leading-relaxed text-sm">
+                                Python trading application placing Market/Limit orders on Binance Futures Testnet (USDT-M). Incorporates an interactive CLI interface and a lightweight Streamlit Web UI.
                             </p>
                             
                             <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1 bg-green-500/20 text-green-400 rounded-lg text-sm border border-green-500/30">Django</span>
-                                <span class="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-lg text-sm border border-blue-500/30">Python</span>
-                                <span class="px-3 py-1 bg-purple-500/20 text-purple-400 rounded-lg text-sm border border-purple-500/30">Gemini AI</span>
-                                <span class="px-3 py-1 bg-cyan-500/20 text-cyan-400 rounded-lg text-sm border border-cyan-500/30">Tailwind</span>
+                                <span class="px-2.5 py-1 bg-yellow-500/20 text-yellow-400 rounded-lg text-xs border border-yellow-500/30">Python</span>
+                                <span class="px-2.5 py-1 bg-red-500/20 text-red-400 rounded-lg text-xs border border-red-500/30">Streamlit</span>
+                                <span class="px-2.5 py-1 bg-orange-500/20 text-orange-400 rounded-lg text-xs border border-orange-500/30">Binance API</span>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Project 2: Text Utils -->
-                    <div class="glass-card rounded-3xl overflow-hidden hover-lift project-card relative">
-                        <div class="h-64 bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center relative overflow-hidden">
+                    <!-- Project 4: AI LifeOS -->
+                    <div class="glass-card rounded-3xl overflow-hidden hover-lift project-card relative" data-category="ai utility">
+                        <!-- Project Image/Icon Area -->
+                        <div class="h-64 bg-gradient-to-br from-blue-600 to-purple-700 flex items-center justify-center relative overflow-hidden">
+                            <div class="absolute inset-0 bg-black/30"></div>
+                            <div class="text-9xl relative z-10 transform group-hover:scale-110 transition-transform">🌌</div>
+                            
+                            <!-- Hover Overlay -->
+                            <div class="project-overlay">
+                                <h4 class="text-2xl font-bold mb-6">View Project</h4>
+                                <div class="flex gap-4">
+                                    <a href="https://github.com/aman24-cpu/ai-lifeos" target="_blank" class="px-6 py-3 bg-white text-black rounded-lg font-semibold hover:bg-gray-100 transition">
+                                        GitHub
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="p-8">
+                            <div class="flex items-start justify-between mb-4 gap-2">
+                                <h3 class="text-2xl font-bold text-white leading-tight">AI LifeOS</h3>
+                                <span class="px-3 py-1 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full text-xs font-semibold whitespace-nowrap">
+                                    PRODUCTIVITY
+                                </span>
+                            </div>
+                            
+                            <p class="text-gray-400 mb-6 leading-relaxed text-sm">
+                                Personal workspace dashboard integrated with Google's Gemini API and Supabase backend. Built with sleek framer-motion animations and fluid drag-and-drop mechanics.
+                            </p>
+                            
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2.5 py-1 bg-blue-500/20 text-blue-400 rounded-lg text-xs border border-blue-500/30">React</span>
+                                <span class="px-2.5 py-1 bg-purple-500/20 text-purple-400 rounded-lg text-xs border border-purple-500/30">Gemini API</span>
+                                <span class="px-2.5 py-1 bg-emerald-500/20 text-emerald-400 rounded-lg text-xs border border-emerald-500/30">Supabase</span>
+                                <span class="px-2.5 py-1 bg-pink-500/20 text-pink-400 rounded-lg text-xs border border-pink-500/30">Framer Motion</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 5: AI Blog Generator -->
+                    <div class="glass-card rounded-3xl overflow-hidden hover-lift project-card relative" data-category="ai">
+                        <!-- Project Image/Icon Area -->
+                        <div class="h-64 bg-gradient-to-br from-cyan-600 to-blue-600 flex items-center justify-center relative overflow-hidden">
                             <div class="absolute inset-0 bg-black/30"></div>
                             <div class="text-9xl relative z-10 transform group-hover:scale-110 transition-transform">📝</div>
                             
@@ -673,33 +803,68 @@
                             <div class="project-overlay">
                                 <h4 class="text-2xl font-bold mb-6">View Project</h4>
                                 <div class="flex gap-4">
-                                    <a href="https://github.com/aman24-cpu" target="_blank" class="px-6 py-3 bg-white text-black rounded-lg font-semibold hover:bg-gray-100 transition">
+                                    <a href="https://github.com/aman24-cpu/AI-BLOG-APP" target="_blank" class="px-6 py-3 bg-white text-black rounded-lg font-semibold hover:bg-gray-100 transition">
                                         GitHub
-                                    </a>
-                                    <a href="#" class="px-6 py-3 bg-black/50 border-2 border-white rounded-lg font-semibold hover:bg-white hover:text-black transition">
-                                        Live Demo
                                     </a>
                                 </div>
                             </div>
                         </div>
                         
                         <div class="p-8">
-                            <div class="flex items-start justify-between mb-4">
-                                <h3 class="text-2xl font-bold text-white">Text Utils</h3>
-                                <span class="px-3 py-1 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full text-xs font-semibold">
+                            <div class="flex items-start justify-between mb-4 gap-2">
+                                <h3 class="text-2xl font-bold text-white leading-tight">AI Blog Generator</h3>
+                                <span class="px-3 py-1 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-full text-xs font-semibold whitespace-nowrap">
+                                    AI POWERED
+                                </span>
+                            </div>
+                            
+                            <p class="text-gray-400 mb-6 leading-relaxed text-sm">
+                                Transform YouTube videos into professional blog articles using Gemini AI. Features include user authentication, multi-language support, and a beautiful modern UI.
+                            </p>
+                            
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2.5 py-1 bg-green-500/20 text-green-400 rounded-lg text-xs border border-green-500/30">Django</span>
+                                <span class="px-2.5 py-1 bg-blue-500/20 text-blue-400 rounded-lg text-xs border border-blue-500/30">Python</span>
+                                <span class="px-2.5 py-1 bg-purple-500/20 text-purple-400 rounded-lg text-xs border border-purple-500/30">Gemini AI</span>
+                                <span class="px-2.5 py-1 bg-cyan-500/20 text-cyan-400 rounded-lg text-xs border border-cyan-500/30">Tailwind</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 6: Text Utils -->
+                    <div class="glass-card rounded-3xl overflow-hidden hover-lift project-card relative" data-category="utility">
+                        <!-- Project Image/Icon Area -->
+                        <div class="h-64 bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center relative overflow-hidden">
+                            <div class="absolute inset-0 bg-black/30"></div>
+                            <div class="text-9xl relative z-10 transform group-hover:scale-110 transition-transform">⚙️</div>
+                            
+                            <!-- Hover Overlay -->
+                            <div class="project-overlay">
+                                <h4 class="text-2xl font-bold mb-6">View Project</h4>
+                                <div class="flex gap-4">
+                                    <a href="https://github.com/aman24-cpu/Text-Utils" target="_blank" class="px-6 py-3 bg-white text-black rounded-lg font-semibold hover:bg-gray-100 transition">
+                                        GitHub
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="p-8">
+                            <div class="flex items-start justify-between mb-4 gap-2">
+                                <h3 class="text-2xl font-bold text-white leading-tight">Text Utils</h3>
+                                <span class="px-3 py-1 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full text-xs font-semibold whitespace-nowrap">
                                     UTILITY
                                 </span>
                             </div>
                             
-                            <p class="text-gray-400 mb-6 leading-relaxed">
-                                Powerful text manipulation toolkit with utilities for case conversion, word counting, 
-                                text analysis, and more. Features real-time processing with a clean interface.
+                            <p class="text-gray-400 mb-6 leading-relaxed text-sm">
+                                Powerful text manipulation toolkit with utilities for case conversion, word counting, text analysis, and more. Features real-time processing with a clean interface.
                             </p>
                             
                             <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1 bg-green-500/20 text-green-400 rounded-lg text-sm border border-green-500/30">Django</span>
-                                <span class="px-3 py-1 bg-yellow-500/20 text-yellow-400 rounded-lg text-sm border border-yellow-500/30">JavaScript</span>
-                                <span class="px-3 py-1 bg-purple-500/20 text-purple-400 rounded-lg text-sm border border-purple-500/30">Bootstrap</span>
+                                <span class="px-2.5 py-1 bg-green-500/20 text-green-400 rounded-lg text-xs border border-green-500/30">Django</span>
+                                <span class="px-2.5 py-1 bg-yellow-500/20 text-yellow-400 rounded-lg text-xs border border-yellow-500/30">JavaScript</span>
+                                <span class="px-2.5 py-1 bg-purple-500/20 text-purple-400 rounded-lg text-xs border border-purple-500/30">Bootstrap</span>
                             </div>
                         </div>
                     </div>
@@ -713,6 +878,91 @@
                         </svg>
                         View All on GitHub
                     </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="py-20 bg-black relative overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(6,182,212,0.05)_0%,transparent_100%)]"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-5xl md:text-6xl font-bold text-center mb-6">
+                    <span class="text-white">Milestones &</span> <span class="neon-text">Achievements</span>
+                </h2>
+                <p class="text-center text-gray-400 text-lg mb-16">Key achievements, honors, and hackathon victories</p>
+                
+                <div class="relative border-l-2 border-cyan-500/30 ml-4 md:ml-32 space-y-12">
+                    
+                    <!-- Experience 1: AI/ML Intern at Academor & IIT Kharagpur -->
+                    <div class="relative pl-8 md:pl-12">
+                        <!-- Timeline Dot -->
+                        <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-cyan-500 shadow-[0_0_10px_#06b6d4]"></div>
+                        
+                        <!-- Timeline card -->
+                        <div class="glass-card p-6 md:p-8 rounded-2xl hover-lift relative overflow-hidden">
+                            <div class="absolute -right-8 -top-8 text-7xl opacity-10 pointer-events-none select-none">🔬</div>
+                            <span class="text-sm font-semibold text-cyan-400 tracking-wider uppercase">Academor (Linked with IIT Kharagpur)</span>
+                            <h3 class="text-2xl font-bold text-white mt-1 mb-2">AI/ML Research Intern</h3>
+                            <span class="inline-block px-3 py-1 bg-cyan-500/20 text-cyan-400 rounded-lg text-xs font-semibold mb-4">2-Month Internship</span>
+                            <p class="text-gray-400 leading-relaxed text-sm">
+                                Conducted AI/ML research and model building under Academor training linked with **IIT Kharagpur**. Focused on predictive analysis, data engineering pipelines, neural network model tuning, and collaborative algorithm research.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Achievement 1: AceHack 3rd Place -->
+                    <div class="relative pl-8 md:pl-12">
+                        <!-- Timeline Dot -->
+                        <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-cyan-500 shadow-[0_0_10px_#06b6d4]"></div>
+                        
+                        <!-- Timeline card -->
+                        <div class="glass-card p-6 md:p-8 rounded-2xl hover-lift relative overflow-hidden">
+                            <div class="absolute -right-8 -top-8 text-7xl opacity-10 pointer-events-none select-none">🏆</div>
+                            <span class="text-sm font-semibold text-cyan-400 tracking-wider uppercase">AceHack Hackathon</span>
+                            <h3 class="text-2xl font-bold text-white mt-1 mb-2">Secured 3rd Rank Overall</h3>
+                            <span class="inline-block px-3 py-1 bg-cyan-500/20 text-cyan-400 rounded-lg text-xs font-semibold mb-4">Algorand Track Winner</span>
+                            <p class="text-gray-400 leading-relaxed text-sm">
+                                Competing against dozens of developer teams, designed and developed an Algorand smart contract algorithm (`ace-hack-algo`) that earned the 3rd Place rank overall at the AceHack hackathon.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Achievement 2: Global Hackathon Demo -->
+                    <div class="relative pl-8 md:pl-12">
+                        <!-- Timeline Dot -->
+                        <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-purple-500 shadow-[0_0_10px_#a855f7]"></div>
+                        
+                        <!-- Timeline card -->
+                        <div class="glass-card p-6 md:p-8 rounded-2xl hover-lift relative overflow-hidden">
+                            <div class="absolute -right-8 -top-8 text-7xl opacity-10 pointer-events-none select-none">🛡️</div>
+                            <span class="text-sm font-semibold text-purple-400 tracking-wider uppercase">Global Hackathon</span>
+                            <h3 class="text-2xl font-bold text-white mt-1 mb-2">Privacy Sentinel Project Launch</h3>
+                            <span class="inline-block px-3 py-1 bg-purple-500/20 text-purple-400 rounded-lg text-xs font-semibold mb-4">AI Identity Enclave</span>
+                            <p class="text-gray-400 leading-relaxed text-sm">
+                                Developed and demoed Privacy Sentinel—an autonomous data negotiation agent sitting on top of WalletConnect using ElizaOS framework and Next.js, presented at the Global Hackathon.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Achievement 3: Open Source & Building -->
+                    <div class="relative pl-8 md:pl-12">
+                        <!-- Timeline Dot -->
+                        <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-emerald-500 shadow-[0_0_10px_#10b981]"></div>
+                        
+                        <!-- Timeline card -->
+                        <div class="glass-card p-6 md:p-8 rounded-2xl hover-lift relative overflow-hidden">
+                            <div class="absolute -right-8 -top-8 text-7xl opacity-10 pointer-events-none select-none">💻</div>
+                            <span class="text-sm font-semibold text-emerald-400 tracking-wider uppercase">Open Source</span>
+                            <h3 class="text-2xl font-bold text-white mt-1 mb-2">Active Open Source Contribution</h3>
+                            <span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 rounded-lg text-xs font-semibold mb-4">7+ Repositories & Tools</span>
+                            <p class="text-gray-400 leading-relaxed text-sm">
+                                Cultivated an active GitHub space (`aman24-cpu`) creating open-source tooling, trading applications (Binance Futures Bot), productivity dashboards (AI LifeOS), and NLP text utilities.
+                            </p>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -830,6 +1080,52 @@
                         block: 'start'
                     });
                 }
+            });
+        });
+
+        // Spotlight Effect
+        const spotlight = document.createElement('div');
+        spotlight.className = 'spotlight';
+        document.body.appendChild(spotlight);
+        
+        window.addEventListener('mousemove', e => {
+            spotlight.style.setProperty('--x', `${e.clientX}px`);
+            spotlight.style.setProperty('--y', `${e.clientY}px`);
+        });
+
+        // Projects Filtering
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+        
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(b => {
+                    b.classList.remove('active', 'bg-cyan-500/20', 'text-cyan-400', 'border-cyan-500/30', 'font-semibold');
+                    b.classList.add('border-gray-800', 'text-gray-400');
+                });
+                // Add active class to clicked button
+                btn.classList.add('active', 'bg-cyan-500/20', 'text-cyan-400', 'border-cyan-500/30', 'font-semibold');
+                btn.classList.remove('border-gray-800', 'text-gray-400');
+                
+                const filterValue = btn.getAttribute('data-filter');
+                
+                projectCards.forEach(card => {
+                    const categories = card.getAttribute('data-category').split(' ');
+                    if (filterValue === 'all' || categories.includes(filterValue)) {
+                        card.style.display = 'block';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'scale(1)';
+                        }, 50);
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'scale(0.95)';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 300);
+                    }
+                });
             });
         });
     </script>
